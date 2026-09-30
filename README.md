@@ -16,6 +16,31 @@
 
 ---
 
+---
+## Spesifikasi Perangkat
+
+| Komponen | Keterangan |
+|---|---|
+| Sistem Operasi | Microsoft Windows 11 Home Single Language (10.0.26200) |
+| Prosesor | AMD Ryzen 5 5600H with Radeon Graphics |
+| Inti / Thread | 6 cores / 12 threads |
+| Memori (RAM) | 15,4 GB |
+| Penyimpanan (Disk C:) | 182 GB total, 20 GB bebas |
+| Kartu Grafis | AMD Radeon(TM) Graphics |
+| Nama Host | LAPTOP-KKAKE64C |
+| Nama Pengguna | rizky |
+
+### Versi Tools Terpasang
+
+| Tool | Versi |
+|---|---|
+| Python | 3.14.7 |
+| Node.js | v26.7.0 |
+| Git | 2.53.0.windows.3 |
+| MySQL (Laragon) | Terpasang melalui Laragon, default port 3306 |
+
+---
+
 ## Identitas Git Global
 
 ```
