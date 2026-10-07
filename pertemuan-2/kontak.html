@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modul 2 - Kontak Kreator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>Hubungi Kreator</h1>
+  <nav>
+    <ul>
+      <li><a href="index.html">Galeri</a></li>
+      <li><a href="proyek.html">Proyek</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="kontak.html">Kontak</a></li>
+    </ul>
+  </nav>
+</header>
+
+<hr>
+
+<main>
+  <section>
+    <h2>Kirim Pesan / Ajukan Kolaborasi</h2>
+    <p>Isi formulir di bawah ini. Saya akan membalas maksimal 1x24 jam pada hari kerja.</p>
+
+    <form action="#" method="post">
+
+      <p>
+        <label for="nama_lengkap">Nama Lengkap:</label><br>
+        <input type="text" id="nama_lengkap" name="nama_lengkap" placeholder="Contoh: Sinta Permata" required>
+      </p>
+
+      <p>
+        <label for="email_kontak">Email Aktif:</label><br>
+        <input type="email" id="email_kontak" name="email_kontak" placeholder="nama@email.com" required>
+      </p>
+
+      <p>
+        <label for="no_wa">Nomor WhatsApp (opsional):</label><br>
+        <input type="tel" id="no_wa" name="no_wa" placeholder="08xxxxxxxxxx">
+      </p>
+
+      <p>
+        <label for="topik">Topik Pesan:</label><br>
+        <select id="topik" name="topik" required>
+          <option value="">-- Pilih Topik --</option>
+          <option value="kolaborasi">Ajakan Kolaborasi</option>
+          <option value="jasa_web">Jasa Pembuatan Website</option>
+          <option value="konsultasi">Konsultasi Desain</option>
+          <option value="lainnya">Lainnya</option>
+        </select>
+      </p>
+
+      <p>
+        <label for="anggaran">Estimasi Anggaran:</label><br>
+        <select id="anggaran" name="anggaran">
+          <option value="">-- Pilih Rentang --</option>
+          <option value="lt1">&lt; Rp 1 jt</option>
+          <option value="1-5">Rp 1 - 5 jt</option>
+          <option value="5-15">Rp 5 - 15 jt</option>
+          <option value="gt15">&gt; Rp 15 jt</option>
+        </select>
+      </p>
+
+      <p>
+        <label for="detail_pesan">Detail Kebutuhan / Pesan:</label><br>
+        <textarea id="detail_pesan" name="detail_pesan" rows="6" cols="50" placeholder="Ceritakan kebutuhan proyek Anda..." required></textarea>
+      </p>
+
+      <p>
+        <button type="submit">Kirim Pesan</button>
+        <button type="reset">Hapus Isian</button>
+      </p>
+
+    </form>
+  </section>
+</main>
+
+<hr>
+
+<footer>
+  <p>&copy; 2026 Galeri Karya Digital &mdash; Teknik Informatika ITG</p>
+</footer>
+
+</body>
+</html>

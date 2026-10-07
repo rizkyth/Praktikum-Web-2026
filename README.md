@@ -56,12 +56,26 @@ git config --global --list
 
 ---
 
+## Catatan Modul 2
+
+- Membuat halaman portofolio: galeri karya, proyek, resume, dan kontak.
+- Teknologi: HTML5 dan CSS murni (tanpa framework).
+- Struktur halaman: `header`, `nav`, `main`, `section`, `article`, `footer`.
+
+---
+
 ## Struktur Repositori
 
 ```
 praktikum-web-2026/
 ├── README.md          # dokumen ini: identitas, catatan modul, spesifikasi perangkat
-└── .gitignore         # pengecualian file sementara
+├── .gitignore         # pengecualian file sementara
+└── pertemuan-2/       # tugas pertemuan 2: portofolio digital
+    ├── index.html     # galeri karya digital
+    ├── proyek.html    # daftar proyek
+    ├── resume.html    # riwayat hidup
+    ├── kontak.html    # halaman kontak
+    └── style.css      # gaya tampilan
 ```
 
 ---
