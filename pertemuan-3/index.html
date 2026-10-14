@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portofolio — Modul 3 CSS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Rizky Pratama</h1>
+    <nav>
+      <ul>
+        <li><a href="#tentang">Tentang</a></li>
+        <li><a href="#project">Proyek</a></li>
+        <li><a href="#kontak">Kontak</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <section id="tentang">
+      <h2>Tentang Saya</h2>
+      <img
+        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Crect width='200' height='200' fill='%230d6efd'/%3E%3Ccircle cx='100' cy='78' r='38' fill='white'/%3E%3Crect x='42' y='128' width='116' height='72' rx='36' fill='white'/%3E%3C/svg%3E"
+        alt="Ilustrasi foto profil" width="200" height="200">
+      <p>
+        Saya adalah mahasiswa yang sedang belajar pengembangan web. Halaman ini
+        dibuat sebagai latihan Modul 3 tentang styling dan tata letak antarmuka
+        menggunakan CSS3, mulai dari box model, flexbox, hingga desain responsif.
+      </p>
+      <h3>Keahlian</h3>
+      <ul>
+        <li>HTML5 — struktur semantik</li>
+        <li>CSS3 — flexbox &amp; responsive design</li>
+        <li>Git — version control dasar</li>
+      </ul>
+    </section>
+
+    <section id="project">
+      <h2>Proyek</h2>
+
+      <article>
+        <h3>Landing Page Portofolio</h3>
+        <p>
+          Halaman satu kolom dengan header, navigasi, dan section konten yang
+          responsif di layar ponsel maupun laptop.
+        </p>
+        <a href="#project">Lihat detail</a>
+      </article>
+
+      <article>
+        <h3>Formulir Kontak</h3>
+        <p>
+          Formulir dengan input teks, email, select, dan textarea yang lebar
+          penuhnya mengikuti lebar kontainer.
+        </p>
+        <a href="#kontak">Lihat detail</a>
+      </article>
+
+      <article>
+        <h3>Latihan Git &amp; GitHub</h3>
+        <p>
+          Simulasi alur kerja version control: add, commit, dan push ke repositori
+          GitHub.
+        </p>
+        <a href="#tentang">Lihat detail</a>
+      </article>
+
+    </section>
+
+    <section id="kontak">
+      <h2>Hubungi Saya</h2>
+      <form action="#" method="post">
+        <p>
+          <label for="nama">Nama Lengkap</label>
+          <input type="text" id="nama" name="nama" placeholder="Tulis nama Anda">
+        </p>
+        <p>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="nama@contoh.com">
+        </p>
+        <p>
+          <label for="topik">Topik</label>
+          <select id="topik" name="topik">
+            <option value="umum">Pertanyaan Umum</option>
+            <option value="proyek">Kerja Sama Proyek</option>
+            <option value="lainnya">Lainnya</option>
+          </select>
+        </p>
+        <p>
+          <label for="pesan">Pesan</label>
+          <textarea id="pesan" name="pesan" rows="5" placeholder="Tulis pesan Anda..."></textarea>
+        </p>
+        <p>
+          <button type="submit">Kirim</button>
+          <button type="reset">Reset</button>
+        </p>
+      </form>
+    </section>
+
+  </main>
+
+  <aside>
+    <h3>Catatan</h3>
+    <p>
+      Latihan ini menekankan pemisahan konten (HTML) dari presentasi (CSS).
+      Coba ubah warna aksen <code>#0d6efd</code> pada <code>style.css</code>
+      untuk melihat efeknya secara langsung.
+    </p>
+  </aside>
+
+  <hr>
+
+  <footer>
+    <p>&copy; 2026 Rizky Pratama — Dibuat untuk Modul 3: Styling dan Tata Letak dengan CSS.</p>
+  </footer>
+
+</body>
+</html>
