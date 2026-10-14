@@ -1,122 +1,94 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portofolio — Modul 3 CSS</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modul 2 - Galeri Karya Digital</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Portofolio</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Galeri</a></li>
+          <li><a href="profil.html">Profil</a></li>
+          <li><a href="proyek.html">Proyek</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="kontak.html">Kontak</a></li>
+        </ul>
+      </nav>
+    </header>
 
-  <header>
-    <h1>Rizky Pratama</h1>
-    <nav>
-      <ul>
-        <li><a href="#tentang">Tentang</a></li>
-        <li><a href="#project">Proyek</a></li>
-        <li><a href="#kontak">Kontak</a></li>
-      </ul>
-    </nav>
-  </header>
+    <hr />
 
-  <main>
+    <main>
+      <section id="profil-kreator">
+        <h2>Tentang Kreator</h2>
+        <div class="profil-card">
+          <img class="profil-avatar" src="profil.jpeg" alt="Foto profil Rizky Taupik Hidayat" width="92" height="92" />
+          <div class="profil-body">
+            <h3>Rizky Taupik Hidayat <span>Mahasiswa Teknik Informatika — Institut Teknologi Garut &middot; NIM 2406014</span></h3>
+            <p>
+              Halo! Saya <strong>Rizky</strong>, desainer antarmuka dan pengembang front-end asal Garut. Fokus saya adalah merancang pengalaman digital yang bersih, cepat, dan mudah diakses untuk UMKM dan komunitas kreatif.
+            </p>
+            <ul class="profil-meta">
+              <li>Garut, Jawa Barat</li>
+              <li>Front-End &amp; UI Design</li>
+              <li>Tersedia untuk kolaborasi</li>
+            </ul>
+            <div class="profil-links">
+              <a class="prim" href="profil.html">Lihat Profil Lengkap</a>
+              <a href="kontak.html">Hubungi Saya</a>
+            </div>
+          </div>
+        </div>
+      </section>
 
-    <section id="tentang">
-      <h2>Tentang Saya</h2>
-      <img
-        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Crect width='200' height='200' fill='%230d6efd'/%3E%3Ccircle cx='100' cy='78' r='38' fill='white'/%3E%3Crect x='42' y='128' width='116' height='72' rx='36' fill='white'/%3E%3C/svg%3E"
-        alt="Ilustrasi foto profil" width="200" height="200">
-      <p>
-        Saya adalah mahasiswa yang sedang belajar pengembangan web. Halaman ini
-        dibuat sebagai latihan Modul 3 tentang styling dan tata letak antarmuka
-        menggunakan CSS3, mulai dari box model, flexbox, hingga desain responsif.
-      </p>
-      <h3>Keahlian</h3>
-      <ul>
-        <li>HTML5 — struktur semantik</li>
-        <li>CSS3 — flexbox &amp; responsive design</li>
-        <li>Git — version control dasar</li>
-      </ul>
-    </section>
+      <hr />
 
-    <section id="project">
-      <h2>Proyek</h2>
+      <section id="koleksi">
+        <h2>Koleksi Terpilih</h2>
 
-      <article>
-        <h3>Landing Page Portofolio</h3>
-        <p>
-          Halaman satu kolom dengan header, navigasi, dan section konten yang
-          responsif di layar ponsel maupun laptop.
-        </p>
-        <a href="#project">Lihat detail</a>
-      </article>
+        <article>
+          <header>
+            <h3>1. Dashboard Analitik Penjualan UMKM</h3>
+            <p>Kategori: Data Visualization | Stack: HTML, CSS Grid, Chart.js, Firebase | Rilis: <time datetime="2025-11">November 2025</time></p>
+          </header>
+          <p>Dashboard responsif untuk memantau omzet harian, stok, dan tren produk terlaris. Dilengkapi filter tanggal dan ekspor laporan PDF untuk pemilik toko.</p>
+        </article>
 
-      <article>
-        <h3>Formulir Kontak</h3>
-        <p>
-          Formulir dengan input teks, email, select, dan textarea yang lebar
-          penuhnya mengikuti lebar kontainer.
-        </p>
-        <a href="#kontak">Lihat detail</a>
-      </article>
+        <article>
+          <header>
+            <h3>2. Aplikasi Reservasi Lapangan Futsal</h3>
+            <p>Kategori: Booking System | Stack: Next.js, Tailwind CSS, Supabase | Rilis: <time datetime="2026-02">Februari 2026</time></p>
+          </header>
+          <p>Platform pemesanan lapangan real-time dengan kalender ketersediaan, pembayaran QRIS, dan notifikasi WhatsApp otomatis untuk admin dan penyewa.</p>
+        </article>
 
-      <article>
-        <h3>Latihan Git &amp; GitHub</h3>
-        <p>
-          Simulasi alur kerja version control: add, commit, dan push ke repositori
-          GitHub.
-        </p>
-        <a href="#tentang">Lihat detail</a>
-      </article>
+        <article>
+          <header>
+            <h3>3. Katalog Produk Kerajinan Bambu</h3>
+            <p>Kategori: E-Catalog | Stack: Astro, Markdown CMS | Rilis: <time datetime="2026-03">Maret 2026</time></p>
+          </header>
+          <p>Katalog digital untuk perajin bambu Garut dengan galeri foto, cerita di balik produk, dan tautan pemesanan langsung via marketplace.</p>
+        </article>
+      </section>
 
-    </section>
+      <hr />
+    </main>
 
-    <section id="kontak">
-      <h2>Hubungi Saya</h2>
-      <form action="#" method="post">
-        <p>
-          <label for="nama">Nama Lengkap</label>
-          <input type="text" id="nama" name="nama" placeholder="Tulis nama Anda">
-        </p>
-        <p>
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" placeholder="nama@contoh.com">
-        </p>
-        <p>
-          <label for="topik">Topik</label>
-          <select id="topik" name="topik">
-            <option value="umum">Pertanyaan Umum</option>
-            <option value="proyek">Kerja Sama Proyek</option>
-            <option value="lainnya">Lainnya</option>
-          </select>
-        </p>
-        <p>
-          <label for="pesan">Pesan</label>
-          <textarea id="pesan" name="pesan" rows="5" placeholder="Tulis pesan Anda..."></textarea>
-        </p>
-        <p>
-          <button type="submit">Kirim</button>
-          <button type="reset">Reset</button>
-        </p>
-      </form>
-    </section>
+    <hr />
 
-  </main>
+    <aside>
+      <h3>Ketersediaan</h3>
+      <p>Menerima kolaborasi untuk proyek website UMKM, landing page event, dan redesign katalog produk. Konsultasi awal gratis.</p>
+    </aside>
 
-  <aside>
-    <h3>Catatan</h3>
-    <p>
-      Latihan ini menekankan pemisahan konten (HTML) dari presentasi (CSS).
-      Coba ubah warna aksen <code>#0d6efd</code> pada <code>style.css</code>
-      untuk melihat efeknya secara langsung.
-    </p>
-  </aside>
+    <hr />
 
-  <hr>
-
-  <footer>
-    <p>&copy; 2026 Rizky Pratama — Dibuat untuk Modul 3: Styling dan Tata Letak dengan CSS.</p>
-  </footer>
-
-</body>
+    <footer>
+      <p>&copy; 2026 Galeri Karya Digital &mdash; Andra Wijaya. Semua hak dilindungi.</p>
+    </footer>
+  </body>
 </html>
