@@ -20,38 +20,35 @@ const updateStats = (data) => {
     completedProjectsEl.innerText = data.filter(p => p.completed).length;
 };
 
-// Render Projects
+// Render Projects - uses <article> matching style.css "section article" selector
 const renderProjects = (data) => {
-    projectList.innerHTML = data.length ? '' : '<p style="text-align:center;grid-column:1/-1;padding:20px;">Tidak ada proyek pada kategori ini.</p>';
-    
-    data.forEach(proj => {
-        const card = document.createElement('article');
-        card.className = 'project-card';
-        card.innerHTML = `
-            <div class="project-header">
-                <h3 class="project-title">${proj.title}</h3>
-                <span class="badge ${proj.completed ? 'badge-success' : 'badge-warning'}">${proj.completed ? 'Selesai' : 'Dalam Pengerjaan'}</span>
-            </div>
-            <div class="project-info">
-                <p>Kategori: ${proj.category}</p>
-                <p class="project-budget">Estimasi: ${formatCurrency(proj.budget)}</p>
-            </div>
-            <div style="display:flex;gap:8px;flex-wrap:wrap;">
-                <button class="btn-toggle" data-id="${proj.id}" style="padding:4px 10px;border:1px solid #cbd5e1;background:#fff;border-radius:4px;font-size:11px;cursor:pointer;">
+    if (data.length === 0) {
+        projectList.innerHTML = '<p style="text-align:center;grid-column:1/-1;padding:20px;color:var(--muted);">Tidak ada proyek pada kategori ini.</p>';
+        return;
+    }
+
+    projectList.innerHTML = data.map(proj => `
+        <article>
+            <header>
+                <h3>${proj.title}</h3>
+                <p><time datetime="">${proj.category}</time> | Status: <span class="${proj.completed ? 'badge-success' : 'badge-warning'}" style="text-transform:capitalize;">${proj.completed ? 'selesai' : 'dalam pengerjaan'}</span></p>
+            </header>
+            <p>Estimasi Anggaran: <strong>${formatCurrency(proj.budget)}</strong></p>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:1rem;">
+                <button class="btn-toggle" data-id="${proj.id}" style="padding:4px 10px;border:1px solid var(--border);background:#fff;border-radius:4px;font-size:11px;cursor:pointer;font-weight:600;">
                     ${proj.completed ? 'Batal Selesai' : 'Tandai Selesai'}
                 </button>
-                <button class="btn-delete" data-id="${proj.id}" style="padding:4px 10px;border:1px solid #ef4444;background:#fff;color:#ef4444;border-radius:4px;font-size:11px;cursor:pointer;">
+                <button class="btn-delete" data-id="${proj.id}" style="padding:4px 10px;border:1px solid var(--danger);background:#fff;color:var(--danger);border-radius:4px;font-size:11px;cursor:pointer;font-weight:600;">
                     Hapus
                 </button>
             </div>
-        `;
-        projectList.appendChild(card);
-    });
+        </article>
+    `).join('');
 };
 
 // Helper: Apply filters and render
 const applyFiltersAndRender = () => {
-    const activeBtn = document.querySelector('.btn-filter.active');
+    const activeBtn = document.querySelector('.filter-group .btn-filter.active') ?? document.querySelector('.profil-links .btn-filter.active') ?? document.querySelector('.btn-filter.active');
     const category = activeBtn?.dataset.category ?? 'Semua';
     const searchTerm = document.getElementById('search-input').value.toLowerCase();
 
@@ -96,14 +93,18 @@ projectList.addEventListener('click', (e) => {
 
 // Initialization
 document.addEventListener('DOMContentLoaded', () => {
-    // Buttons
-    document.querySelectorAll('.btn-filter').forEach(btn => {
+    // Filter buttons - find them in .profil-links
+    document.querySelectorAll('.profil-links .btn-filter, .filter-group .btn-filter').forEach(btn => {
         btn.addEventListener('click', (e) => {
-            document.querySelectorAll('.btn-filter').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.profil-links .btn-filter, .filter-group .btn-filter').forEach(b => b.classList.remove('active'));
             e.target.classList.add('active');
             applyFiltersAndRender();
         });
     });
+
+    // Set initial active button
+    const firstBtn = document.querySelector('.profil-links .btn-filter, .filter-group .btn-filter');
+    if (firstBtn) firstBtn.classList.add('active');
 
     document.getElementById('project-form').addEventListener('submit', handleFormSubmit);
     document.getElementById('search-input').addEventListener('input', applyFiltersAndRender);
