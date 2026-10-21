@@ -1,116 +1,114 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Modul 4 - Interactive Portfolio Tracker</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-<header>
-    <h1>Portfolio Tracker</h1>
-    <nav>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Portfolio Tracker</h1>
+      <nav>
         <ul>
-            <li><a href="index.html">Dashboard</a></li>
-            <li><a href="profil.html">Profil</a></li>
-            <li><a href="proyek.html">Proyek</a></li>
-            <li><a href="resume.html">Resume</a></li>
-            <li><a href="kontak.html">Kontak</a></li>
+          <li><a href="index.html">Dashboard</a></li>
+          <li><a href="profil.html">Profil</a></li>
+          <li><a href="proyek.html">Proyek</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="kontak.html">Kontak</a></li>
         </ul>
-    </nav>
-</header>
+      </nav>
+    </header>
 
-<main>
-    <section id="profil-kreator">
-        <h2>Tugas Mandiri - Bab 3</h2>
+    <main>
+      <section id="profil-kreator">
+        <h2>Modul 4: Pengolahan Logika Data & Interaktivitas DOM</h2>
         <p>Manajemen Portofolio Interaktif dengan form dinamis, filter pencarian, toggle status, dan hapus proyek.</p>
-    </section>
+      </section>
 
-    <!-- Task 1: Project Form -->
-    <section id="tambah-proyek">
+      <!-- Task 1: Project Form -->
+      <section id="tambah-proyek">
         <h2>Tambah Proyek</h2>
         <form id="project-form" class="project-form">
-            <div class="form-grid">
-                <div class="field">
-                    <label for="title">Judul Proyek</label>
-                    <input type="text" id="title" required placeholder="Contoh: Sistem Inventory">
-                </div>
-                <div class="field">
-                    <label for="category">Kategori</label>
-                    <select id="category">
-                        <option value="Web App">Web App</option>
-                        <option value="Mobile App">Mobile App</option>
-                        <option value="Desktop App">Desktop App</option>
-                        <option value="UI/UX Design">UI/UX Design</option>
-                    </select>
-                </div>
-                <div class="field">
-                    <label for="budget">Estimasi Anggaran (Rp)</label>
-                    <input type="number" id="budget" required min="1" step="100000" placeholder="2500000">
-                </div>
+          <div class="form-grid">
+            <div class="field">
+              <label for="title">Judul Proyek</label>
+              <input type="text" id="title" required placeholder="Contoh: Sistem Inventory" />
             </div>
-            <div class="form-actions">
-                <label class="checkbox" for="completed">
-                    <input type="checkbox" id="completed">
-                    <span>Sudah selesai</span>
-                </label>
-                <button type="submit">Tambah Proyek</button>
+            <div class="field">
+              <label for="category">Kategori</label>
+              <select id="category">
+                <option value="Web App">Web App</option>
+                <option value="Mobile App">Mobile App</option>
+                <option value="Desktop App">Desktop App</option>
+                <option value="UI/UX Design">UI/UX Design</option>
+              </select>
             </div>
+            <div class="field">
+              <label for="budget">Estimasi Anggaran (Rp)</label>
+              <input type="number" id="budget" required min="1" step="100000" placeholder="2500000" />
+            </div>
+          </div>
+          <div class="form-actions">
+            <label class="checkbox" for="completed">
+              <input type="checkbox" id="completed" />
+              <span>Sudah selesai</span>
+            </label>
+            <button type="submit">Tambah Proyek</button>
+          </div>
         </form>
-    </section>
+      </section>
 
-    <!-- Stats Grid using .profil-stats and .profil-stat from style.css -->
-    <section id="statistik">
+      <!-- Stats Grid using .profil-stats and .profil-stat from style.css -->
+      <section id="statistik">
         <h2>Statistik Portofolio</h2>
         <div class="profil-stats">
-            <div class="profil-stat">
-                <strong id="total-projects">0</strong>
-                <span>Total Proyek</span>
-            </div>
-            <div class="profil-stat">
-                <strong id="total-budget">Rp 0</strong>
-                <span>Total Anggaran</span>
-            </div>
-            <div class="profil-stat">
-                <strong id="completed-projects">0</strong>
-                <span>Selesai</span>
-            </div>
+          <div class="profil-stat">
+            <strong id="total-projects">0</strong>
+            <span>Total Proyek</span>
+          </div>
+          <div class="profil-stat">
+            <strong id="total-budget">Rp 0</strong>
+            <span>Total Anggaran</span>
+          </div>
+          <div class="profil-stat">
+            <strong id="completed-projects">0</strong>
+            <span>Selesai</span>
+          </div>
         </div>
-    </section>
+      </section>
 
-    <!-- Filter Group using .profil-links from style.css -->
-    <section id="filter">
+      <!-- Filter Group using .profil-links from style.css -->
+      <section id="filter">
         <h2>Filter &amp; Pencarian</h2>
         <div class="profil-links filter-group">
-            <button type="button" class="btn-filter" data-category="Semua">Semua</button>
-            <button type="button" class="btn-filter" data-category="Web App">Web App</button>
-            <button type="button" class="btn-filter" data-category="Mobile App">Mobile App</button>
-            <button type="button" class="btn-filter" data-category="Desktop App">Desktop App</button>
-            <button type="button" class="btn-filter" data-category="UI/UX Design">UI/UX Design</button>
-            <input type="text" id="search-input" class="search-input" placeholder="Cari proyek...">
+          <button type="button" class="btn-filter" data-category="Semua">Semua</button>
+          <button type="button" class="btn-filter" data-category="Web App">Web App</button>
+          <button type="button" class="btn-filter" data-category="Mobile App">Mobile App</button>
+          <button type="button" class="btn-filter" data-category="Desktop App">Desktop App</button>
+          <button type="button" class="btn-filter" data-category="UI/UX Design">UI/UX Design</button>
+          <input type="text" id="search-input" class="search-input" placeholder="Cari proyek..." />
         </div>
-    </section>
+      </section>
 
-    <!-- Project List - articles will be rendered here -->
-    <section id="daftar-proyek">
+      <!-- Project List - articles will be rendered here -->
+      <section id="daftar-proyek">
         <h2>Daftar Proyek</h2>
         <div id="project-list" class="project-list">
-            <!-- Projects will be rendered here as <article> elements -->
+          <!-- Projects will be rendered here as <article> elements -->
         </div>
-    </section>
+      </section>
+    </main>
 
-</main>
+    <aside>
+      <h3>Ingin proyek serupa?</h3>
+      <p>Hubungi saya untuk diskusi kebutuhan dan estimasi biaya.</p>
+    </aside>
 
-<aside>
-    <h3>Ingin proyek serupa?</h3>
-    <p>Hubungi saya untuk diskusi kebutuhan dan estimasi biaya.</p>
-</aside>
+    <footer>
+      <p>&copy; 2026 Interactive Portfolio Tracker &mdash; Modul 4</p>
+    </footer>
 
-<footer>
-    <p>&copy; 2026 Interactive Portfolio Tracker &mdash; Modul 4</p>
-</footer>
-
-<script src="main.js"></script>
-</body>
+    <script src="main.js"></script>
+  </body>
 </html>

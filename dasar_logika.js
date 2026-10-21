@@ -1,5 +1,5 @@
-const namaProgrammer = "Budi Santoso";
-const tahunMulai = 2022;
+const namaProgrammer = "Rizky Taupik";
+const tahunMulai = 2024;
 const tahunSekarang = new Date().getFullYear();
 
 const hitungPengalaman = (mulai, sekarang) => sekarang - mulai;
