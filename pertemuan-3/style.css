@@ -1,0 +1,482 @@
+/* ===== Modul 3 — Styling & Tata Letak (diselaraskan dengan pertemuan-2) ===== */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Plus+Jakarta+Sans:wght@700;800&display=swap");
+
+:root {
+  --bg: #f8f7f5;
+  --surface: #ffffff;
+  --text: #1e293b;
+  --muted: #64748b;
+  --accent: #0f766e;
+  --accent-2: #14b8a6;
+  --accent-dark: #115e59;
+  --border: #e2e8f0;
+  --radius: 14px;
+  --shadow: 0 4px 24px rgba(15, 118, 110, 0.08);
+  --shadow-hover: 0 10px 32px rgba(15, 118, 110, 0.14);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  min-height: 100vh;
+}
+
+/* hide decorative hr - replaced by CSS borders */
+body > hr,
+main hr {
+  display: none;
+}
+
+/* ===== Header ===== */
+body > header {
+  background: linear-gradient(135deg, #0f766e 0%, #134e4a 100%);
+  color: #fff;
+  padding: 2.2rem 1.5rem 1.4rem;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.18);
+}
+
+body > header h1 {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 1.85rem;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.9rem;
+}
+
+body > header nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+body > header nav a {
+  color: rgba(255, 255, 255, 0.92);
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 600;
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  transition:
+    background 0.18s,
+    color 0.18s,
+    border-color 0.18s;
+}
+
+body > header nav a:hover {
+  background: #fff;
+  color: var(--accent-dark);
+  border-color: #fff;
+}
+
+/* ===== Main layout ===== */
+main {
+  max-width: 860px;
+  margin: 2rem auto;
+  padding: 0 1.25rem;
+}
+
+main > section {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.6rem 1.5rem;
+  margin-bottom: 1.25rem;
+  box-shadow: var(--shadow);
+}
+
+main > section h2 {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 1.25rem;
+  color: var(--accent-dark);
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.55rem;
+  border-bottom: 2.5px solid var(--accent-2);
+  display: inline-block;
+}
+
+main > section p {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+main > section p + p {
+  margin-top: 0.6rem;
+}
+
+/* Gambar responsif (wajib modul 3: display block, max-width 100%, height auto) */
+main img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0.75rem 0;
+  border-radius: 12px;
+}
+
+/* Articles as cards */
+section article {
+  background: #f0fdfa;
+  border: 1px solid #ccfbf1;
+  border-radius: 10px;
+  padding: 1.15rem 1.2rem;
+  margin-top: 1rem;
+  transition:
+    box-shadow 0.2s,
+    transform 0.2s,
+    border-color 0.2s;
+}
+
+section article:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-2px);
+  border-color: #99f6e4;
+}
+
+section article header h3 {
+  font-size: 1.02rem;
+  color: var(--text);
+  margin-bottom: 0.25rem;
+}
+
+section article header p {
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+section article > p {
+  margin-top: 0.6rem;
+  color: #334155;
+  font-size: 0.92rem;
+}
+
+section article a {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.88rem;
+}
+section article a:hover {
+  text-decoration: underline;
+}
+
+time {
+  background: #ccfbf1;
+  color: var(--accent-dark);
+  padding: 0.1rem 0.45rem;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+/* Lists inside sections */
+section ul {
+  margin: 0.6rem 0 0 1.2rem;
+  color: #334155;
+  font-size: 0.93rem;
+}
+section li + li {
+  margin-top: 0.3rem;
+}
+
+/* ===== Form ===== */
+form {
+  margin-top: 1.25rem;
+}
+
+form p {
+  margin-bottom: 0.85rem;
+}
+form label {
+  font-weight: 600;
+  font-size: 0.88rem;
+  color: var(--text);
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form select,
+form textarea {
+  width: 100%;
+  margin-top: 0.35rem;
+  padding: 0.65rem 0.85rem;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  font: inherit;
+  font-size: 0.93rem;
+  color: var(--text);
+  background: #fff;
+  outline: none;
+  transition:
+    border-color 0.18s,
+    box-shadow 0.18s;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+  border-color: var(--accent-2);
+  box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.18);
+}
+
+form textarea {
+  resize: vertical;
+}
+
+form button {
+  font: inherit;
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 0.65rem 1.35rem;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  transition:
+    transform 0.15s,
+    box-shadow 0.15s,
+    background 0.15s;
+}
+
+form button[type="submit"] {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(15, 118, 110, 0.3);
+}
+form button[type="submit"]:hover {
+  background: var(--accent-dark);
+  transform: translateY(-1px);
+}
+
+form button[type="reset"] {
+  background: #fff;
+  color: var(--muted);
+  border: 1.5px solid var(--border);
+  margin-left: 0.5rem;
+}
+form button[type="reset"]:hover {
+  border-color: var(--muted);
+  color: var(--text);
+}
+
+/* ===== Aside ===== */
+body > aside {
+  max-width: 860px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, #f0fdfa, #ecfeff);
+  border: 1px solid #99f6e4;
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  box-shadow: var(--shadow);
+}
+
+body > aside h3 {
+  font-size: 1rem;
+  color: var(--accent-dark);
+  margin-bottom: 0.3rem;
+}
+
+body > aside p {
+  color: var(--muted);
+  font-size: 0.93rem;
+}
+
+/* only keep the centered aside, not nested ones */
+main aside {
+  display: none;
+}
+
+/* ===== Footer ===== */
+body > footer {
+  text-align: center;
+  padding: 1.6rem 1rem 2rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin-top: 1.5rem;
+}
+
+/* ===== Profil Kreator ===== */
+.profil-card {
+  display: flex;
+  gap: 1.4rem;
+  align-items: flex-start;
+}
+.profil-avatar {
+  width: 92px;
+  height: 92px;
+  min-width: 92px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0f766e, #14b8a6);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 1.9rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  border: 3px solid #ccfbf1;
+  box-shadow: 0 4px 16px rgba(15, 118, 110, 0.22);
+  flex-shrink: 0;
+}
+img.profil-avatar {
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  padding: 0;
+  font-size: 0;
+  background: #e2e8f0;
+}
+.profil-body {
+  flex: 1;
+  min-width: 0;
+}
+.profil-body h3 {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 1.15rem;
+  color: var(--text);
+  line-height: 1.3;
+}
+.profil-body h3 span {
+  display: block;
+  font-family: "Inter", sans-serif;
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-top: 0.15rem;
+}
+.profil-body > p {
+  margin-top: 0.65rem;
+  color: #334155;
+}
+.profil-meta {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 0.85rem;
+}
+.profil-meta li {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--accent-dark);
+  background: #f0fdfa;
+  border: 1px solid #ccfbf1;
+  padding: 0.3rem 0.65rem;
+  border-radius: 999px;
+}
+.profil-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.95rem;
+}
+.profil-links a {
+  text-decoration: none;
+  font-size: 0.84rem;
+  font-weight: 700;
+  padding: 0.45rem 0.95rem;
+  border-radius: 999px;
+  border: 1.5px solid var(--border);
+  background: #fff;
+  color: var(--accent);
+  transition: all 0.18s;
+}
+.profil-links a.prim {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+  box-shadow: 0 4px 14px rgba(15, 118, 110, 0.25);
+}
+.profil-links a:hover {
+  border-color: var(--accent-2);
+  color: var(--accent-dark);
+  transform: translateY(-1px);
+}
+.profil-links a.prim:hover {
+  background: var(--accent-dark);
+  border-color: var(--accent-dark);
+  color: #fff;
+}
+.profil-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  margin-top: 1.1rem;
+}
+.profil-stat {
+  text-align: center;
+  background: #f8fafc;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.75rem 0.5rem;
+}
+.profil-stat strong {
+  display: block;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 1.35rem;
+  color: var(--accent-dark);
+  line-height: 1;
+}
+.profil-stat span {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* ===== Responsive: Tampilan HP (wajib modul 3: nav jadi kolom) ===== */
+@media (max-width: 700px) {
+  body > header nav ul {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  main {
+    margin-top: 20px;
+  }
+
+  main img {
+    margin: 0 auto;
+  }
+
+  main > section {
+    padding: 20px;
+  }
+
+  body > header h1 {
+    font-size: 1.45rem;
+  }
+
+  .profil-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .profil-meta,
+  .profil-links {
+    justify-content: center;
+  }
+  form button {
+    width: 100%;
+  }
+  form button[type="reset"] {
+    margin-left: 0;
+    margin-top: 0.5rem;
+  }
+}
