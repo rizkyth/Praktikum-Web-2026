@@ -68,14 +68,32 @@ git config --global --list
 
 ```
 praktikum-web-2026/
-├── README.md          # dokumen ini: identitas, catatan modul, spesifikasi perangkat
-├── .gitignore         # pengecualian file sementara
-└── pertemuan-2/       # tugas pertemuan 2: portofolio digital
-    ├── index.html     # galeri karya digital
-    ├── proyek.html    # daftar proyek
-    ├── resume.html    # riwayat hidup
-    ├── kontak.html    # halaman kontak
-    └── style.css      # gaya tampilan
+├── README.md                    # dokumen ini: identitas, catatan modul, spesifikasi perangkat
+├── .gitignore                   # pengecualian file sementara
+├── pertemuan-2/                 # tugas pertemuan 2: portofolio digital (Modul 2)
+│   ├── index.html               # galeri karya digital
+│   ├── proyek.html              # daftar proyek
+│   ├── resume.html              # riwayat hidup
+│   ├── kontak.html              # halaman kontak
+│   ├── profil.html              # profil pengguna
+│   ├── profil.jpeg              # foto profil
+│   └── style.css                # gaya tampilan
+├── pertemuan-3/                 # tugas pertemuan 3: styling & tata letak (Modul 3)
+│   ├── index.html               # galeri karya digital (penyempurnaan Modul 2)
+│   ├── proyek.html              # daftar proyek
+│   ├── resume.html              # riwayat hidup
+│   ├── kontak.html              # halaman kontak
+│   ├── profil.html              # profil pengguna
+│   ├── profil.jpeg              # foto profil
+│   ├── style.css                # gaya tampilan (ditambah CSS responsif gambar)
+│   └── 1791938265MODUL 3.pdf    # dokumen modul 3
+└── pertemuan-4/                 # tugas pertemuan 4: tracker proyek interaktif (Modul 4)
+    ├── index.html               # dashboard proyek interaktif
+    ├── main.js                  # logika utama aplikasi
+    ├── dasar_logika.js          # dasar JavaScript
+    ├── olah_data.js             # pemrosesan dan manipulasi data
+    ├── style.css                # gaya tampilan Modul 4
+    └── 1792544378MODUL 4.pdf    # dokumen modul 4
 ```
 
 ---
