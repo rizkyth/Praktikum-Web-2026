@@ -23,7 +23,7 @@ const updateStats = (data) => {
 // Render Projects - uses <article> matching style.css "section article" selector
 const renderProjects = (data) => {
     if (data.length === 0) {
-        projectList.innerHTML = '<p style="text-align:center;grid-column:1/-1;padding:20px;color:var(--muted);">Tidak ada proyek pada kategori ini.</p>';
+        projectList.innerHTML = '<p class="empty-state">Tidak ada proyek pada kategori ini.</p>';
         return;
     }
 
@@ -31,14 +31,14 @@ const renderProjects = (data) => {
         <article>
             <header>
                 <h3>${proj.title}</h3>
-                <p><time datetime="">${proj.category}</time> | Status: <span class="${proj.completed ? 'badge-success' : 'badge-warning'}" style="text-transform:capitalize;">${proj.completed ? 'selesai' : 'dalam pengerjaan'}</span></p>
+                <p><time datetime="">${proj.category}</time> | Status: <span class="${proj.completed ? 'badge-success' : 'badge-warning'}">${proj.completed ? 'Selesai' : 'Dalam Pengerjaan'}</span></p>
             </header>
             <p>Estimasi Anggaran: <strong>${formatCurrency(proj.budget)}</strong></p>
-            <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:1rem;">
-                <button class="btn-toggle" data-id="${proj.id}" style="padding:4px 10px;border:1px solid var(--border);background:#fff;border-radius:4px;font-size:11px;cursor:pointer;font-weight:600;">
+            <div class="card-actions">
+                <button class="btn-toggle" data-id="${proj.id}">
                     ${proj.completed ? 'Batal Selesai' : 'Tandai Selesai'}
                 </button>
-                <button class="btn-delete" data-id="${proj.id}" style="padding:4px 10px;border:1px solid var(--danger);background:#fff;color:var(--danger);border-radius:4px;font-size:11px;cursor:pointer;font-weight:600;">
+                <button class="btn-delete" data-id="${proj.id}">
                     Hapus
                 </button>
             </div>
