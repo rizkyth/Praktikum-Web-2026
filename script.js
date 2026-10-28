@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const todoForm = document.querySelector("#todoForm");
   const taskInput = document.querySelector("#taskInput");
   const inputError = document.querySelector("#inputError");
+  const inputError2 = document.querySelector("#inputError2");
   const todoList = document.querySelector("#todoList");
   const clearCompletedBtn = document.querySelector("#clearCompletedBtn");
   const taskCounter = document.querySelector("#taskCounter");
@@ -16,6 +17,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const tasks = getTasks();
     todoList.innerHTML = "";
 
+    if (tasks.length <= 4) {
+      taskInput.classList.remove("error");
+      inputError2.style.display = "none";
+    } else {
+      taskInput.classList.add("error");
+      inputError2.style.display = "block";
+    }
     if (tasks.length === 0) {
       todoList.innerHTML = "<p class='empty-state'>Belum ada tugas tersimpan.</p>";
       clearCompletedBtn.style.display = "none";
@@ -25,13 +33,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     tasks.forEach((task, index) => {
       const li = document.createElement("li");
-      li.className = `todo-item ${task.completed ? 'completed' : ''}`;
+      li.className = `todo-item ${task.completed ? "completed" : ""}`;
 
       li.innerHTML = `
         <span class="todo-text">${task.text}</span>
         <div class="todo-actions">
           <button class="action-btn complete-btn" data-index="${index}">
-            ${task.completed ? 'Batal' : 'Selesai'}
+            ${task.completed ? "Batal" : "Selesai"}
           </button>
           <button class="action-btn delete-btn" data-index="${index}">Hapus</button>
         </div>
@@ -40,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Tampilkan tombol bersihkan tugas selesai jika ada tugas yang diselesaikan
-    const completedCount = tasks.filter(t => t.completed).length;
+    const completedCount = tasks.filter((t) => t.completed).length;
     clearCompletedBtn.style.display = completedCount > 0 ? "block" : "none";
     updateCounter(tasks);
   };
@@ -48,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Fitur 1: Penghitung jumlah tugas
   const updateCounter = (tasks) => {
     const total = tasks.length;
-    const completed = tasks.filter(t => t.completed).length;
+    const completed = tasks.filter((t) => t.completed).length;
     const pending = total - completed;
     taskCounter.textContent = `Total: ${total} Tugas | Selesai: ${completed} | Belum Selesai: ${pending}`;
   };
@@ -56,26 +64,36 @@ document.addEventListener("DOMContentLoaded", () => {
   // 4. Tambah tugas saat formulir dikirim
   todoForm.addEventListener("submit", (e) => {
     e.preventDefault();
-    const taskText = taskInput.value.trim();
 
-    // Validasi input sederhana
-    if (taskText.length < 3) {
+    const task = getTasks();
+
+    if (task.length <= 4) {
+      const taskText = taskInput.value.trim();
+
+      // Validasi input sederhana
+      if (taskText.length < 3) {
+        taskInput.classList.add("error");
+        inputError.style.display = "block";
+        return;
+      }
+
+      // Jika valid, hilangkan pesan error
+      taskInput.classList.remove("error");
+      inputError.style.display = "none";
+
+      // Simpan tugas baru ke array LocalStorage
+      const tasks = getTasks();
+      tasks.push({ text: taskText, completed: false });
+      saveTasks(tasks);
+
+      taskInput.value = "";
+      renderTasks();
+      taskInput.classList.remove("error");
+      inputError2.style.display = "none";
+    } else {
       taskInput.classList.add("error");
-      inputError.style.display = "block";
-      return;
+      inputError2.style.display = "block";
     }
-
-    // Jika valid, hilangkan pesan error
-    taskInput.classList.remove("error");
-    inputError.style.display = "none";
-
-    // Simpan tugas baru ke array LocalStorage
-    const tasks = getTasks();
-    tasks.push({ text: taskText, completed: false });
-    saveTasks(tasks);
-
-    taskInput.value = "";
-    renderTasks();
   });
 
   // 5. Tangani klik tombol Selesai dan Hapus menggunakan Event Delegation
@@ -102,12 +120,11 @@ document.addEventListener("DOMContentLoaded", () => {
   // Fitur 2: Tombol bersihkan tugas selesai
   clearCompletedBtn.addEventListener("click", () => {
     if (confirm("Hapus semua tugas yang sudah diselesaikan?")) {
-      const tasks = getTasks().filter(t => !t.completed);
+      const tasks = getTasks().filter((t) => !t.completed);
       saveTasks(tasks);
       renderTasks();
     }
   });
-
   // Render pertama kali saat halaman selesai dimuat
   renderTasks();
 });
