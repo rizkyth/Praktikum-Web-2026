@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
     todoList.innerHTML = "";
 
     if (tasks.length === 0) {
-      todoList.innerHTML = "<p style='text-align:center; color:#64748b; font-size:13px; padding:10px;'>Belum ada tugas tersimpan.</p>";
+      todoList.innerHTML = "<p class='empty-state'>Belum ada tugas tersimpan.</p>";
       clearCompletedBtn.style.display = "none";
       updateCounter(tasks);
       return;

@@ -1,27 +1,43 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aplikasi To-Do List - Modul 5</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="todo-app">
-    <h2>Daftar Tugas Saya</h2>
-    <p id="taskCounter" class="task-counter">Total: 0 Tugas | Selesai: 0 | Belum Selesai: 0</p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modul 5 — Todo List</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Daftar Tugas</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Beranda</a></li>
+        </ul>
+      </nav>
+    </header>
 
-    <form id="todoForm" novalidate>
-      <div class="input-section">
-        <input type="text" id="taskInput" placeholder="Ketikkan tugas baru Anda...">
-        <button type="submit" class="add-btn">Tambah</button>
-      </div>
-      <div class="error-message" id="inputError">Tugas tidak boleh kosong atau kurang dari 3 karakter!</div>
-    </form>
+    <main>
+      <section class="todo-app">
+        <h2>Daftar Tugas Saya</h2>
+        <p id="taskCounter" class="task-counter">Total: 0 Tugas | Selesai: 0 | Belum Selesai: 0</p>
 
-    <ul class="todo-list" id="todoList"></ul>
-    <button id="clearCompletedBtn" class="clear-completed-btn" style="display: none;">Bersihkan Tugas Selesai</button>
-  </div>
-  <script src="script.js"></script>
-</body>
+        <form id="todoForm" novalidate>
+          <div class="input-section">
+            <input type="text" id="taskInput" placeholder="Ketikkan tugas baru Anda..." autocomplete="off" />
+            <button type="submit" class="add-btn">Tambah</button>
+          </div>
+          <div class="error-message" id="inputError">Tugas tidak boleh kosong atau kurang dari 3 karakter!</div>
+        </form>
+
+        <ul class="todo-list" id="todoList"></ul>
+        <button id="clearCompletedBtn" class="clear-completed-btn" style="display: none;">Bersihkan Tugas Selesai</button>
+      </section>
+    </main>
+
+    <footer>
+      <p>Modul 5 — Manipulasi DOM, Event Handling &amp; Validasi Form Input</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
 </html>
