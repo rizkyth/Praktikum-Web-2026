@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modul 6 — User Directory App</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>User Directory App</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Beranda</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="user-app">
+        <h2>Daftar Pengguna dari API</h2>
+        <p class="subtitle">Praktikum Asynchronous JavaScript &amp; Fetch API</p>
+
+        <div class="actions-bar">
+          <button class="btn-primary" id="btnFetch">Muat Data Pengguna</button>
+        </div>
+
+        <div class="status-msg" id="statusMessage">Klik tombol untuk memuat data pengguna</div>
+
+        <!-- Card Pengguna -->
+        <div class="user-grid" id="userList"></div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Modul 6 — Asynchronous JavaScript &amp; API Fetching</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
